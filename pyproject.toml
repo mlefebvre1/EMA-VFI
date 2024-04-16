@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ema-vfi"
+version = "1.0.0"
+description = "Extracting Motion and Appearance via Inter-Frame Attention for Efficient Video Frame Interpolation"
+requires-python = ">=3.8"
+dependencies = ["scikit-image", "numpy", "tqdm", "timm"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
