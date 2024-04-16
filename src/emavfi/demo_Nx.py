@@ -7,10 +7,9 @@ import argparse
 from imageio import mimsave
 
 '''==========import from our code=========='''
-sys.path.append('.')
-import config as cfg
-from Trainer import Model
-from benchmark.utils.padder import InputPadder
+import .config as cfg
+from .Trainer import Model
+from .benchmark.utils.padder import InputPadder
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', default='ours_t', type=str)
@@ -43,7 +42,7 @@ model.device()
 print(f'=========================Start Generating=========================')
 
 I0 = cv2.imread('example/img1.jpg')
-I2 = cv2.imread('example/img2.jpg') 
+I2 = cv2.imread('example/img2.jpg')
 
 I0_ = (torch.tensor(I0.transpose(2, 0, 1)).cuda() / 255.).unsqueeze(0)
 I2_ = (torch.tensor(I2.transpose(2, 0, 1)).cuda() / 255.).unsqueeze(0)
